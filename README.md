@@ -1,7 +1,7 @@
 # TCR2vec
 TCR2vec is a python software designed for embedding TCR sequences into numerical vectors. It is a transformer-based model that pretrained with __MLM__ and __SPM__ (similarity preservation modeling). After the multi-task pretraining stage, TCRvec is able to transform amino acid sequences of TCRs into a similarity preserved embedding space with contextual understanding of the language of TCRs. Similar TCRs in sequence space have smaller Euclidean distances in vector space while divergent TCRs have larger Euclidean distances. The workflow of the pretraining process is shown below. <br />
 
-<img src="https://github.com/jiangdada1221/TCRvec/blob/main/figs/workflow.jpg" width="800"> <br />
+<img src="https://github.com/jiangdada1221/TCR2vec_train/blob/main/figures/workflow.jpg" width="800"> <br />
 
 ## Dependencies
 TCR2vec is writen in Python based on the deeplearning library - Pytorch. Compared to Tensorflow, Pytorch is more user-friendly in __version compatibility__. I would strongly suggest using Pytorch as the deeplearning library so that followers can easily run the code with less pain in making Tensorflow work.  <br />
@@ -86,6 +86,13 @@ python finetune.py --path_train path_to_train --path_test path_to_test --epoch 2
 ```
 Again, type *python finetune.py --h* for details.
 <br />
+
+#### Use trained models to make predictions
+We provide the code to make prediction scores for TCR-epitope binding using the trained model from either finetuning or using SVM/MLP in *evaluate.py*.
+```
+python predict.py --dset_path path_to_file --save_prediction_path path_to_save.txt --model_path path_to_finetune.pth
+```
+Again, type *python predict.py --h* for details. <br />
 
 #### Descriptions for scripts
 | Module name                                    | Usage                                              |    
