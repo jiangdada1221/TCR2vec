@@ -31,7 +31,7 @@ pip install tcr2vec
 ```
 ## Data
 
- All the source data included in the paper is publicly available, so we suggest readers refer to the original papers for more details. We also uploaded the processed data to google drive which can be accessed via [this link](https://drive.google.com/file/d/1ioEkYeIdLMafYgoNER33QrThKHlgZCzZ/view?usp=sharing). For the pretraining data, please refer to the [training repository](https://github.com/jiangdada1221/TCR2vec_train).
+ All the source data included in the paper is publicly available, so we suggest readers refer to the original papers for more details. We also uploaded the processed data to google drive which can be accessed via [this link](https://drive.google.com/file/d/1N-88wZYhEs2xaEwFQUn04AaNb8eCgOuv/view?usp=sharing). For the pretraining data, please refer to the [training repository](https://github.com/jiangdada1221/TCR2vec_train).
 
 ## Usages of TCR2vec
 ### Embedding TCRs 
@@ -94,9 +94,9 @@ python predict.py --dset_path path_to_file --save_prediction_path path_to_save.t
 Again, type *python predict.py --h* for details. <br />
 
 ### Download of pretrained TCR2vec models
-[TCR2vec]() <br />
-[TCR2vec_large]() (embedding size of 768) <br />
-[CDR3vec]() (pretrained on CDR3 sequences) <br />
+[TCR2vec](https://drive.google.com/file/d/1Nj0VHpJFTUDx4X7IPQ0OGXKlGVCrwRZl/view?usp=sharing) <br />
+[TCR2vec_large](https://drive.google.com/file/d/1zFE8Kn7gFKzm-RZzcMoy4rn1cIhtIuiU/view?usp=sharing) (embedding size of 768) <br />
+[CDR3vec](https://drive.google.com/file/d/1crwG2kLj8O3qQ1zfu8YbEk6cNb5aUD4e/view?usp=sharing) (pretrained on CDR3 sequences) <br />
 
 ### Reconstruction of full TCR
 The full-length TCR can be recovered by knowing CDR3 + V/J. An example is shown below:
