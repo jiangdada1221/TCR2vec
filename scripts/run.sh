@@ -1,3 +1,6 @@
+#Recnstruction from CDR3+V+J to full TCR
+python ../tcr2vec/cdr3_to_full_seq.py ../tcr2vec/data/TCR_gene_segment_data/ ../tcr2vec/data/sample.csv V J CDR3.beta ../tcr2vec/results/sample_full.csv 
+
 #evaluate
 python ../tcr2vec/evaluate.py --dset_folder ../tcr2vec/data/5fold/ --pretrain_path ../tcr2vec/models/TCR2vec_120 --c_method SVM --use_column full_seq --batch_size 64 --record_path ../tcr2vec/results/svm_120_10_ --use_sklearnx True --save_path ../tcr2vec/results/test
 python ../tcr2vec/evaluate.py --dset_folder ../tcr2vec/data/5fold/ --pretrain_path ../tcr2vec/models/TCR2vec_120 --c_method MLP --use_column full_seq --batch_size 64 --record_path ../tcr2vec/results/MLP_120_10_ --use_sklearnx True --save_path ../tcr2vec/results/test2

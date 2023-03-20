@@ -146,3 +146,7 @@ if __name__ == '__main__':
             if args.save_path != 'None':
                 print(f'Save the classification model to {args.save_path}_{fold}.pickle')
                 pickle.dump(clf,open(args.save_path + f'_{fold}.pickle','wb'))
+
+# ! The clustering code is not provided now since it depends on the GIANA package and clusTCR package
+# TCRdist: https://github.com/svalkiers/clusTCR/tree/main/clustcr/modules/tcrdist
+# GIANA: https://github.com/s175573/GIANA 

@@ -18,7 +18,7 @@ if __name__ == '__main__':
     parser = argparse.ArgumentParser(description='')
     parser.add_argument('--path_train',type=str,help='The path to the training file')
     parser.add_argument('--path_test',type=str,default='None',help='The path to the test file')
-    parser.add_argument('--batch_size',type=int,default=128)
+    parser.add_argument('--batch_size',type=int,default=64)
     parser.add_argument('--epoch',type=int,default=20)
     parser.add_argument('--emb_size',type=int,default=120,help='Embedding size of TCR')
     parser.add_argument('--emb_size_epi',type=int,default=120,help='Embedding size of epitope; 120 for eigdecom; 128 for atchleyae')
