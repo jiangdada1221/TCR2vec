@@ -114,9 +114,13 @@ If you want to re-train TCR2vec on our provided pretraining data or your custom 
 * Example scripts can be found under the [*scripts/*](https://github.com/jiangdada1221/TCR2vec/blob/main/scripts/run.sh) 
 
 ## Contact
-Welcome for reporting bugs! We check email often, so for instant enquiries, please contact us via [email](mailto:jiangdada12344321@gmail.com). Or you may open an issue section.
+```
+Name: Yuepeng Jiang
+Email: yuepjiang3-c@my.cityu.edu.hk/yuj009@eng.ucsd.edu/jiangdada12344321@gmail.com
+Note: For instant query, feel free to send me an email since I check email often. Otherwise, you may open an issue section in this repository.
+```
+Welcome for reporting bugs! 
 
 ## License
-
 Free use of TCR2vec is granted under the terms of the GNU General Public License version 3 (GPLv3).
 
