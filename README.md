@@ -1,5 +1,5 @@
 # TCR2vec
-TCR2vec is a python software designed for embedding TCR sequences into numerical vectors. It is a transformer-based model that pretrained with __MLM__ and __SPM__ (similarity preservation modeling). After the multi-task pretraining stage, TCRvec is able to transform amino acid sequences of TCRs into a similarity preserved embedding space with contextual understanding of the language of TCRs. Similar TCRs in sequence space have smaller Euclidean distances in vector space while divergent TCRs have larger Euclidean distances. The workflow of the pretraining process is shown below. <br />
+TCR2vec is a python software designed for embedding TCR sequences into numerical vectors. It is a transformer-based model that pretrained with __MLM__ and __SPM__ (similarity preservation modeling). After the multi-task pretraining stage, TCR2vec is able to transform amino acid sequences of TCRs into a similarity preserved embedding space with contextual understanding of the language of TCRs. Similar TCRs in sequence space have smaller Euclidean distances in vector space while divergent TCRs have larger Euclidean distances. The workflow of the pretraining process is shown below. <br />
 
 <img src="https://github.com/jiangdada1221/TCR2vec_train/blob/main/figures/workflow.jpg" width="800"> <br />
 
@@ -29,14 +29,13 @@ Or you can directly install it as a PyPI package via
 ```
 pip install tcr2vec
 ```
-
 ## Data
 
  All the source data included in the paper is publicly available, so we suggest readers refer to the original papers for more details. We also uploaded the processed data to google drive which can be accessed via [this link](https://drive.google.com/file/d/1ioEkYeIdLMafYgoNER33QrThKHlgZCzZ/view?usp=sharing). For the pretraining data, please refer to the [training repository](https://github.com/jiangdada1221/TCR2vec_train).
 
-## Usages of TCRvec
-#### Embedding TCRs 
-We provide a simple code snip to show how to use TCRvec for embedding TCRs, which is shown below: <br />
+## Usages of TCR2vec
+### Embedding TCRs 
+We provide a simple code snip to show how to use TCR2vec for embedding TCRs, which is shown below: <br />
 
 ```python
 import torch
@@ -65,21 +64,21 @@ loader = DataLoader(dset,batch_size=32,collate_fn=dset.collate_fn,shuffle=False)
 emb = get_emb(emb_model,loader,detach=True) #B x emb_size
 ```
 
-We also provide a python script __embed.py__ in *tcr2vec/* that uses the pretrained model to embed user's input file. The input file should be a csv file, with one column recording the input TCRs (By default, the column name is *full_seq*). 
+We also provide a python script *embed.py* in *tcr2vec/* that uses the pretrained model to embed user's input file. The input file should be a csv file, with one column recording the input TCRs (By default, the column name is *full_seq*). 
 ```
 python embed.py --pretrain_path path_to_tcr2vec --dset_path path_to_data.csv --save_path path_to_save_embedding.npy
 ```
 Also, check *python embed.py --h* for more details about input parameters. <br />
 
-#### Evaluation of embeddings
+### Evaluation of embeddings
 The basic script is shown below:
 ```
 python evaluate.py --dset_folder path_to_5fold_dir --pretrain_path path_to_TCRevec --c_method SVM
 ```
-For more experiments settings, pleas enter *python evaluate.py --h* for details.
+For more experiment settings, pleas enter *python evaluate.py --h* for details.
 <br />
 
-#### Finetune of TCR2vec
+### Finetune of TCR2vec
 We provide the finetune code for classfication purpose. For writing your custom finetune code, make sure you set the model to training model (*model.train()*)
 ```
 python finetune.py --path_train path_to_train --path_test path_to_test --epoch 20 --batch_size 64 --pretrain_path path_to_TCR2vec --save_path finetune_path.pth 
@@ -87,24 +86,27 @@ python finetune.py --path_train path_to_train --path_test path_to_test --epoch 2
 Again, type *python finetune.py --h* for details.
 <br />
 
-#### Use trained models to make predictions
+### Use trained models to make predictions
 We provide the code to make prediction scores for TCR-epitope binding using the trained model from either finetuning or using SVM/MLP in *evaluate.py*.
 ```
 python predict.py --dset_path path_to_file --save_prediction_path path_to_save.txt --model_path path_to_finetune.pth
 ```
 Again, type *python predict.py --h* for details. <br />
 
-#### Descriptions for scripts
-| Module name                                    | Usage                                              |    
-|------------------------------------------------|----------------------------------------------------|
-| model.py                                      | TCRvec model                   |
-| dataset.py                                    | Python Dataset module for TCR data  |
-| train.py                                    | Training the TCRvec model     |
-| evaluate.py                                       | Evaluate the performance of embeddings on downstream tasks  |
-| utils.py                              | helper functions             |
-| embed.py                                       | Script for embedding TCRs                     |
-| epi_encode_ae.py                                | AE-Atchley for embedding epitopes |
-| epi_encode_ed.py                                | EigenDecom for embedding epitopes |
+### Pretrained TCR2vec models
+[TCR2vec]()
+[TCR2vec_large]() (embedding size of 768)
+[CDR3vec]() (pretrained on CDR3 sequences)
+
+### Reconstruction of full TCR
+The full-length TCR can be recovered by knowing CDR3 + V/J. An example is shown below:
+```
+python cdr3_to_full_seq.py tcr2vec/data/TCR_gene_segment_data/ tcr2vec/data/sample.csv V J CDR3.beta tcr2vec/data/sample_full.csv 
+```
+More information can be found on [*cdr3_to_full_seq.py*](https://github.com/jiangdada1221/TCR2vec/blob/main/tcr2vec/cdr3_to_full_seq.py)
+
+### Notes
+* by
 
 ## Contact
 
@@ -112,5 +114,5 @@ We check email often, so for instant enquiries, please contact us via [email](ma
 
 ## License
 
-Free use of TCRvec is granted under the terms of the GNU General Public License version 3 (GPLv3).
+Free use of TCR2vec is granted under the terms of the GNU General Public License version 3 (GPLv3).
 
