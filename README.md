@@ -114,8 +114,7 @@ If you want to re-train TCR2vec on our provided pretraining data or your custom 
 * Example scripts can be found under the [*scripts/*](https://github.com/jiangdada1221/TCR2vec/blob/main/scripts/run.sh) 
 
 ## Contact
-
-We check email often, so for instant enquiries, please contact us via [email](mailto:jiangdada12344321@gmail.com). Or you may open an issue section.
+Welcome for reporting bugs! We check email often, so for instant enquiries, please contact us via [email](mailto:jiangdada12344321@gmail.com). Or you may open an issue section.
 
 ## License
 
