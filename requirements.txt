@@ -1,0 +1,9 @@
+tqdm
+scipy
+biopython
+matplotlib
+touch 
+pandas 
+numpy 
+scikit-learn
+tape_proteins

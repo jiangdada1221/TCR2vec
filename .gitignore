@@ -1,0 +1,13 @@
+build
+.ipynb_checkpoints
+__pycache__
+setup.cfg
+tcr2vec.egg-info
+.ipynb
+data/5fold
+data/TCR_epitope.csv
+5fold
+TCR_epitope.csv
+CDR3vec_120
+TCR2vec_120
+TCR2vec_768
