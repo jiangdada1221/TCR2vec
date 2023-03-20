@@ -93,10 +93,10 @@ python predict.py --dset_path path_to_file --save_prediction_path path_to_save.t
 ```
 Again, type *python predict.py --h* for details. <br />
 
-### Pretrained TCR2vec models
-[TCR2vec]()
-[TCR2vec_large]() (embedding size of 768)
-[CDR3vec]() (pretrained on CDR3 sequences)
+### Download of pretrained TCR2vec models
+[TCR2vec]() <br />
+[TCR2vec_large]() (embedding size of 768) <br />
+[CDR3vec]() (pretrained on CDR3 sequences) <br />
 
 ### Reconstruction of full TCR
 The full-length TCR can be recovered by knowing CDR3 + V/J. An example is shown below:
@@ -105,8 +105,13 @@ python cdr3_to_full_seq.py tcr2vec/data/TCR_gene_segment_data/ tcr2vec/data/samp
 ```
 More information can be found on [*cdr3_to_full_seq.py*](https://github.com/jiangdada1221/TCR2vec/blob/main/tcr2vec/cdr3_to_full_seq.py)
 
+### Pretraining of TCR2vec
+If you want to re-train TCR2vec on our provided pretraining data or your custom data, please check the [training code](https://github.com/jiangdada1221/TCR2vec_train)
+
 ### Notes
-* by
+* By default, the column names for CDR3, V/J genes, full TCRs are *CDR3.beta*, *V*, *J*, and *full_seq*
+* For embdding evaluation, we recommend using the [sklearnx](https://intel.github.io/scikit-learn-intelex/) to accelerate the sklearn models (by specifying *--use_sklearnx True*)
+* Example scripts can be found under the [*scripts/*](https://github.com/jiangdada1221/TCR2vec/blob/main/scripts/run.sh) 
 
 ## Contact
 
