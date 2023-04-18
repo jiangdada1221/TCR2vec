@@ -86,7 +86,12 @@ def to_full_seq(directory, Vname, Jname, CDR3):
             if Vname_adapted in Vrecord.id:
                 Vseq = Vrecord.seq
                 foundV = True
-
+            elif '-' in Vname_adapted:
+                Vname_adapted = Vname_adapted.split('-')[0]
+                if Vname_adapted in Vrecord.id:
+                    Vseq = Vrecord.seq
+                    foundV = True
+                    
     for Jrecord in SeqIO.parse(
         os.path.join(directory, 'J_segment_sequences.fasta'), "fasta"
     ):
