@@ -45,6 +45,8 @@ from tape import TAPETokenizer
 path_to_TCR2vec = 'path_to_pretrained_TCR2vec'
 emb_model = TCR2vec(path_to_TCR2vec)
 tokenizer = TAPETokenizer(vocab='iupac') 
+#by default, the device for emb_model is cpu
+#emb_model = emb_model.to('cuda:0') #to gpu
 
 #example TCR
 seq = 'NAGVTQTPKFQVLKTGQSMTLQCAQDMNHNSMYWYRQDPGMGLRLIYYSASEGTTDKGEVPNGYNVSRLNKREFSLRLESAAPSQTSVYFCASSEALGTGNTIYFGEGSWLTVV'
