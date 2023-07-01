@@ -102,10 +102,13 @@ Again, type *python predict.py --h* for details. <br />
 
 ### Reconstruction of full TCR
 The full-length TCR can be recovered by knowing CDR3 + V/J. An example is shown below:
+```python
+from tcr2vec.utils import cdr2full
+samples = [['cdr3_1','v1','j1'],['cdr3_2','v2','j2']...]
+full_seq = cdr2full(directory,samples,verbose=False,multi_process=True)
+#directory: path to gene directory; e.g. tcr2vec/data/TCR_gene_segment_data
 ```
-python cdr3_to_full_seq.py tcr2vec/data/TCR_gene_segment_data/ tcr2vec/data/sample.csv V J CDR3.beta tcr2vec/data/sample_full.csv 
-```
-More information can be found on [*cdr3_to_full_seq.py*](https://github.com/jiangdada1221/TCR2vec/blob/main/tcr2vec/cdr3_to_full_seq.py)
+More information can be found on [*utils.py*](https://github.com/jiangdada1221/TCR2vec/blob/main/tcr2vec/cdr3_to_full_seq.py)
 
 ### Pretraining of TCR2vec
 If you want to re-train TCR2vec on our provided pretraining data or your custom data, please check the [training code](https://github.com/jiangdada1221/TCR2vec_train)
@@ -121,7 +124,6 @@ Name: Yuepeng Jiang
 Email: yuepjiang3-c@my.cityu.edu.hk/yuj009@eng.ucsd.edu/jiangdada12344321@gmail.com
 Note: For instant query, feel free to send me an email since I check email often. Otherwise, you may open an issue section in this repository.
 ```
-Welcome for reporting bugs! 
 
 ## License
 Free use of TCR2vec is granted under the terms of the GNU General Public License version 3 (GPLv3).
