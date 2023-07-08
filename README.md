@@ -31,7 +31,7 @@ pip install tcr2vec
 ```
 ## Data
 
- All the source data included in the paper is publicly available, so we suggest readers refer to the original papers for more details. We also uploaded the processed data to google drive which can be accessed via [this link](https://drive.google.com/file/d/1N-88wZYhEs2xaEwFQUn04AaNb8eCgOuv/view?usp=sharing). For the pretraining data, please refer to the [training repository](https://github.com/jiangdada1221/TCR2vec_train).
+ All the source data included in the paper is publicly available, so we suggest readers refer to the original papers for more details. We also uploaded the processed data to google drive which can be accessed via [this link](https://drive.google.com/file/d/1SML_YjiK6WwIgXD-4jIRcy1vWE-46PUp/view?usp=sharing). For the pretraining data, please refer to the [training repository](https://github.com/jiangdada1221/TCR2vec_train).
 
 ## Usages of TCR2vec
 ### Embedding TCRs 
