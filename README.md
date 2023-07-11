@@ -97,7 +97,10 @@ Again, type *python predict.py --h* for details. <br />
 
 ### Download of pretrained TCR2vec models
 [TCR2vec](https://drive.google.com/file/d/1Nj0VHpJFTUDx4X7IPQ0OGXKlGVCrwRZl/view?usp=sharing) <br />
+[TCR2vec](https://drive.google.com/file/d/1CeF701iHVfWHbffG7eib9EGE8rbCcm3f/view?usp=sharing)(pretrained on TCRdb) <br />
+<!---
 [TCR2vec_large](https://drive.google.com/file/d/1zFE8Kn7gFKzm-RZzcMoy4rn1cIhtIuiU/view?usp=sharing) (embedding size of 768) <br />
+-->
 [CDR3vec](https://drive.google.com/file/d/1crwG2kLj8O3qQ1zfu8YbEk6cNb5aUD4e/view?usp=sharing) (pretrained on CDR3 sequences) <br />
 
 ### Reconstruction of full TCR
