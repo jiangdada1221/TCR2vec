@@ -97,11 +97,13 @@ Again, type *python predict.py --h* for details. <br />
 
 ### Download of pretrained TCR2vec models
 [TCR2vec](https://drive.google.com/file/d/1Nj0VHpJFTUDx4X7IPQ0OGXKlGVCrwRZl/view?usp=sharing) <br />
+[TCR2vec_small](https://drive.google.com/file/d/17Y54VUnC5hkCBNdxeVilfJBpZZex9ncv/view?usp=sharing)(smaller network; less GPU memory needed; size=128) <br />
 [TCR2vec](https://drive.google.com/file/d/1CeF701iHVfWHbffG7eib9EGE8rbCcm3f/view?usp=sharing)(pretrained on TCRdb) <br />
 <!---
 [TCR2vec_large](https://drive.google.com/file/d/1zFE8Kn7gFKzm-RZzcMoy4rn1cIhtIuiU/view?usp=sharing) (embedding size of 768) <br />
 -->
 [CDR3vec](https://drive.google.com/file/d/1crwG2kLj8O3qQ1zfu8YbEk6cNb5aUD4e/view?usp=sharing) (pretrained on CDR3 sequences) <br />
+[CDR3vec_small](https://drive.google.com/file/d/1SIHTqkWR31hWuyu3-Z-DjRX2LnSi249Q/view?usp=sharing)(smaller network; less GPU memory needed; size=128) <br />
 
 ### Reconstruction of full TCR
 The full-length TCR can be recovered by knowing CDR3 + V/J. An example is shown below:
